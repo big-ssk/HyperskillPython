@@ -1,4 +1,4 @@
-import random
+from random import choice
 from string import ascii_lowercase
 
 
@@ -14,7 +14,7 @@ class Hangman:
                 "wrong_length": "You should input a single letter"}
 
     def __init__(self):
-        self.guessed_word = random.choice(self.words)
+        self.guessed_word = choice(self.words)
         self.masked_word = '-' * len(self.guessed_word)
         self.letters = set(self.guessed_word)
         self.tried_letters = set()
