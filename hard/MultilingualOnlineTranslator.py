@@ -55,7 +55,7 @@ class OnlineTranslator:
             self.source_language = self.languages[source_language]
             self.target_language = self.languages[target_language]
         except KeyError:
-            print("Sorry, the program doesn't support korean")
+            print(f"Sorry, the program doesn't support {target_language}")
             exit()
         self.word_to_translate = word_to_translate
 
