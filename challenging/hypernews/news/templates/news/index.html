@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>news</title>
+</head>
+<body>
+<h2>Hyper news</h2>
+<div>
+    {% for article in articles %}
+    {% ifchanged article.created.split.0 %}
+    <h4> {{ article.created.split.0 }}</h4>
+    {% endifchanged %}
+    <ul>
+        <li><a target="_blank" href="{% url 'index'%}{{ article.link }}/">{{ article.title }}</a></li>
+    </ul>
+    {% endfor %}
+</div>
+<a href="{% url 'create' %}" target="_blank">Create news</a>
+<div>
+    <form action="{% url 'index' %}" method="get">
+        <h3>Search:</h3>
+        <input type="text" name="q"></p>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

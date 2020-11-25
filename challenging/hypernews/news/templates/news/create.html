@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<form action="{% url 'create' %}" method="post" name="create">
+    {% csrf_token %}
+    <p>
+        Enter title:
+        <input type="text" name="title">
+    </p>
+    <p>
+        Enter text:
+        <input type="text" name="text">
+    </p>
+    <input type="submit" value="post record">
+</form><br>
+<a href="{% url 'index' %}" target="_blank">Main page</a>
+</body>
+</html>
